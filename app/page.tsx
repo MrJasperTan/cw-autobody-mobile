@@ -159,7 +159,7 @@ export default async function Home({ searchParams }: HomeProps) {
           <p className="eyebrow">Free estimates</p>
           <h2>Call {business.phone} or send photos before scheduling mobile repair.</h2>
           <p>
-            The service vehicle lists dent, frame, plastic bumper, scratch, and scrape repair. CW Autobody&apos;s current
+            The service vehicle lists dent, frame, plastic bumper, scratch, and scrape repair. CW Mobile Autobody&apos;s current
             public listing also offers paint work, color matching, headlight restoration and tinting, wheel curb-rash
             repair, replacement parts, paint correction, and paint restoration.
           </p>
@@ -260,7 +260,7 @@ export default async function Home({ searchParams }: HomeProps) {
                   ? `Your details were saved, but the photos could not be attached. Please text them to ${business.phone}.`
                   : submission.photos === 'partial'
                     ? `Your request and at least one optimized photo were saved. Some additional photos could not be converted; text those to ${business.phone} if they show important damage.`
-                    : 'Your details and optimized photos are in the owner dashboard. CW Autobody Mobile will follow up using your preferred contact method.'}
+                    : 'Your details and optimized photos are in the owner dashboard. CW Mobile Autobody will follow up using your preferred contact method.'}
               </span>
             </div>
           ) : null}

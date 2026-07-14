@@ -39,7 +39,7 @@ export default function BeforeAfterCarousel({ projects }: BeforeAfterCarouselPro
         <p>
           {activeProject.isReference
             ? 'Temporary restoration example. Add verified CW repairs and customer feedback through the owner CMS.'
-            : 'CW Autobody Mobile work, photographed before service and after the finished repair.'}
+            : 'CW Mobile Autobody work, photographed before service and after the finished repair.'}
         </p>
       </header>
 

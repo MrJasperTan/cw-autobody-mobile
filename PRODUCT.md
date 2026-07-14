@@ -10,7 +10,7 @@ Drivers in Chandler, Mesa, Gilbert, Tempe, and Phoenix who need convenient dent,
 
 ## Product Purpose
 
-Present CW Autobody Mobile's repair capabilities, establish confidence through clear visual evidence and service terms, and turn qualified visitors into phone calls or photo estimate requests.
+Present CW Mobile Autobody's repair capabilities, establish confidence through clear visual evidence and service terms, and turn qualified visitors into phone calls or photo estimate requests.
 
 ## Brand Personality
 

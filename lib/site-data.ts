@@ -1,9 +1,9 @@
 export const business = {
-  name: 'CW Autobody Mobile',
-  legalName: 'CW Autobody',
+  name: 'CW Mobile Autobody',
+  legalName: 'CW Mobile Autobody',
   tagline: 'Mobile body, bumper, paint, wheel, and cosmetic repair with free photo estimates.',
   description:
-    'CW Autobody Mobile provides on-site auto body repair across Chandler, Mesa, Gilbert, Tempe, and Phoenix. Publicly listed services include dent and frame repair, plastic bumper repair, scratch and scrape repair, headlight restoration and tinting, wheel curb-rash repair and painting, touch-up and color matching, part replacement, paint correction, and paint restoration.',
+    'CW Mobile Autobody provides on-site auto body repair across Chandler, Mesa, Gilbert, Tempe, and Phoenix. Publicly listed services include dent and frame repair, plastic bumper repair, scratch and scrape repair, headlight restoration and tinting, wheel curb-rash repair and painting, touch-up and color matching, part replacement, paint correction, and paint restoration.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://autobody.thejaspertan.com',
   phone: process.env.NEXT_PUBLIC_PHONE || '480-300-9022',
   sms: process.env.NEXT_PUBLIC_SMS || '+14803009022',
@@ -191,7 +191,7 @@ export const services = [
 export const processSteps = [
   {
     title: 'Send photos',
-    text: 'Upload clear damage photos or message 480-300-9022. CW Autobody advertises free estimates with photo review available around the clock.',
+    text: 'Upload clear damage photos or message 480-300-9022. CW Mobile Autobody advertises free estimates with photo review available around the clock.',
   },
   {
     title: 'Review the estimate',
@@ -246,7 +246,7 @@ export const faqs = [
   {
     question: 'Is a deposit required?',
     answer:
-      'The current CW Autobody public listing says no deposit is required. Confirm the final scope, price, and payment timing with the technician before work starts.',
+      'The current CW Mobile Autobody public listing says no deposit is required. Confirm the final scope, price, and payment timing with the technician before work starts.',
   },
   {
     question: 'Is same-day service available?',
@@ -262,8 +262,8 @@ export const faqs = [
 
 export const seoKeywords = [
   'mobile autobody repair',
-  'CW Autobody Mobile',
-  'CW Autobody Chandler',
+  'CW Mobile Autobody',
+  'CW Mobile Autobody Chandler',
   'mobile auto body repair near me',
   'mobile dent repair',
   'mobile dent repair Mesa',

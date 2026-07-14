@@ -392,7 +392,7 @@ export default function OwnerCms() {
           <p className="eyebrow dark">Owner CMS</p>
           <h1 className="cms-brand-title">
             <Image src="/cw-mark.svg" alt="CW" width={72} height={72} priority />
-            <span>Autobody Mobile</span>
+            <span>Mobile Autobody</span>
           </h1>
           <p>Manage website content, R2 image uploads, and Turso estimate requests.</p>
           <form onSubmit={login}>
