@@ -24,7 +24,8 @@ const defaultSeoContent: SeoContent = {
 
 export function generateSiteMetadata(content: SeoContent = defaultSeoContent): Metadata {
   const siteBusiness = content.business;
-  const title = `${siteBusiness.name} | Mobile Dent, Bumper & Autobody Repair`;
+  const title = `${siteBusiness.name} | Dent, Bumper & Paint Repair`;
+  const seoDescription = 'Mobile dent, bumper, scratch, and paint repair across Mesa, Chandler, and the East Valley. Send photos to CW Mobile Autobody for a free estimate.';
   const socialImage = '/cw-mobile-autobody-og.jpg';
 
   return {
@@ -32,7 +33,7 @@ export function generateSiteMetadata(content: SeoContent = defaultSeoContent): M
       default: title,
       template: `%s | ${siteBusiness.name}`,
     },
-    description: siteBusiness.description,
+    description: seoDescription,
     keywords: seoKeywords,
     authors: [{ name: siteBusiness.name }],
     creator: siteBusiness.name,
@@ -58,7 +59,7 @@ export function generateSiteMetadata(content: SeoContent = defaultSeoContent): M
       locale: 'en_US',
       url: siteBusiness.url,
       title,
-      description: siteBusiness.description,
+      description: seoDescription,
       siteName: siteBusiness.name,
       images: [{
         url: socialImage,
@@ -70,7 +71,7 @@ export function generateSiteMetadata(content: SeoContent = defaultSeoContent): M
     twitter: {
       card: 'summary_large_image',
       title,
-      description: siteBusiness.description,
+      description: seoDescription,
       images: [socialImage],
     },
     robots: {

@@ -84,9 +84,10 @@ textarea {
   border-radius: 6px;
 }
 
-.brand-lockup strong {
+.brand-name {
   display: block;
   font-size: 0.98rem;
+  font-weight: 900;
   letter-spacing: 0;
 }
 
@@ -372,8 +373,10 @@ h3 {
   border-radius: 6px;
 }
 
-.footer-brand strong {
+.footer-brand-name {
+  display: block;
   font-size: 1.08rem;
+  font-weight: 900;
 }
 
 .intro-section {
@@ -435,7 +438,7 @@ h3 {
   line-height: 1.6;
 }
 
-.service-row strong {
+.service-row .service-price {
   white-space: nowrap;
 }
 
@@ -1216,10 +1219,12 @@ details p {
   max-width: 720px;
   align-items: center;
   justify-content: flex-end;
+  flex-wrap: wrap;
   gap: 18px;
 }
 
-.footer-owner-login {
+.footer-owner-login,
+.footer-share-button {
   display: inline-flex;
   min-height: 44px;
   flex: 0 0 auto;
@@ -1234,7 +1239,13 @@ details p {
   transition: border-color 160ms ease, background 160ms ease;
 }
 
-.footer-owner-login:hover {
+.footer-share-button {
+  background: transparent;
+  cursor: pointer;
+}
+
+.footer-owner-login:hover,
+.footer-share-button:hover {
   border-color: var(--white);
   background: rgba(255, 255, 255, 0.1);
 }

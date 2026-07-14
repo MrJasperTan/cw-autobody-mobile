@@ -174,8 +174,9 @@ export default function HeroScroll({
         <div className="hero-content">
           <p className="eyebrow">Mobile Dent, Bumper, Paint & Light Collision Repair</p>
           <h1 className="hero-title-lockup">
-            <NextImage src="/cw-mark.svg" alt="CW" width={104} height={104} priority />
-            <span>{businessName.replace(/^CW\s+/i, '')}</span>
+            <NextImage src="/cw-mark.svg" alt="CW Mobile Autobody logo" aria-hidden="true" width={104} height={104} priority />
+            <span className="sr-only">CW </span>
+            <span>{businessName.replace(/^CW\s+/i, '')} Repair</span>
           </h1>
           <p className="hero-copy">{tagline}</p>
           <div className="hero-actions">
@@ -203,7 +204,7 @@ export default function HeroScroll({
           <span>Every detail</span>
         </div>
         <a className="hero-phone" href={`tel:${sms}`} aria-label={`Call ${businessName} at ${phone}`}>
-          <FaPhone aria-hidden="true" /> {phone}
+          <FaPhone aria-hidden="true" /> Call {phone}
         </a>
       </div>
     </section>

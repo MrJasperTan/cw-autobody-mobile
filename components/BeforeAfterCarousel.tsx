@@ -60,7 +60,7 @@ export default function BeforeAfterCarousel({ projects }: BeforeAfterCarouselPro
             <img
               className="comparison-image comparison-after"
               src={activeProject.afterImage}
-              alt=""
+              alt={activeProject.afterAlt || `${activeProject.title} after repair`}
             />
           </div>
           <span className="comparison-label comparison-label-before">Before</span>
@@ -129,7 +129,7 @@ export default function BeforeAfterCarousel({ projects }: BeforeAfterCarouselPro
               aria-selected={index === activeIndex}
               onClick={() => selectProject(index)}
             >
-              <img src={project.afterImage} alt="" />
+              <img src={project.afterImage} alt={`${project.title} after repair thumbnail`} />
               <span>{project.title}</span>
             </button>
           ))}

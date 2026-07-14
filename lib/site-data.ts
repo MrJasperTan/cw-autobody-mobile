@@ -4,10 +4,10 @@ export const business = {
   tagline: 'Mobile body, bumper, paint, wheel, and cosmetic repair with free photo estimates.',
   description:
     'CW Mobile Autobody provides on-site auto body repair across Chandler, Mesa, Gilbert, Tempe, and Phoenix. Publicly listed services include dent and frame repair, plastic bumper repair, scratch and scrape repair, headlight restoration and tinting, wheel curb-rash repair and painting, touch-up and color matching, part replacement, paint correction, and paint restoration.',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://autobody.thejaspertan.com',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://cwautobodyaz.com',
   phone: process.env.NEXT_PUBLIC_PHONE || '480-300-9022',
   sms: process.env.NEXT_PUBLIC_SMS || '+14803009022',
-  email: process.env.NEXT_PUBLIC_EMAIL || 'quotes@autobody.thejaspertan.com',
+  email: process.env.NEXT_PUBLIC_EMAIL || 'quote@cwautobodyaz.com',
   address: process.env.NEXT_PUBLIC_ADDRESS || 'Mobile service by appointment',
   city: process.env.NEXT_PUBLIC_CITY || 'Mesa',
   state: process.env.NEXT_PUBLIC_STATE || 'AZ',
@@ -22,7 +22,7 @@ export const business = {
   bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL || '#quote',
   mapUrl:
     process.env.NEXT_PUBLIC_MAP_URL ||
-    'https://maps.google.com/?q=CW%20Autobody%20Mobile%20Chandler%20AZ',
+    'https://maps.google.com/?q=CW%20Mobile%20Autobody%20Chandler%20AZ',
 };
 
 export const hours = [

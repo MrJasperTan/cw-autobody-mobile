@@ -21,6 +21,7 @@ import {
 import { getCmsContent } from '@/lib/cms-content';
 import HeroScroll from '@/components/HeroScroll';
 import BeforeAfterCarousel from '@/components/BeforeAfterCarousel';
+import ShareSiteButton from '@/components/ShareSiteButton';
 
 export const dynamic = 'force-dynamic';
 
@@ -50,9 +51,9 @@ export default async function Home({ searchParams }: HomeProps) {
     <main>
       <header className="site-header" aria-label="Primary navigation">
         <a className="brand-lockup" href="#top" aria-label={`${business.name} home`}>
-          <Image className="brand-mark" src="/cw-mark.svg" alt="" width={42} height={42} priority />
+          <Image className="brand-mark" src="/cw-mark.svg" alt="CW Mobile Autobody logo" width={42} height={42} priority />
           <span>
-            <strong>{business.name.replace(/^CW\s+/i, '')}</strong>
+            <span className="brand-name">{business.name.replace(/^CW\s+/i, '')}</span>
             <small>Mobile auto body repair</small>
           </span>
         </a>
@@ -111,7 +112,7 @@ export default async function Home({ searchParams }: HomeProps) {
                 <h3>{service.name}</h3>
                 <p>{service.description}</p>
               </div>
-              <strong>{service.price}</strong>
+              <span className="service-price">{service.price}</span>
             </article>
           ))}
         </div>
@@ -386,16 +387,16 @@ export default async function Home({ searchParams }: HomeProps) {
 
       <footer className="footer">
         <div className="footer-brand">
-          <Image className="footer-mark" src="/cw-mark.svg" alt="" width={64} height={64} />
+          <Image className="footer-mark" src="/cw-mark.svg" alt="CW Mobile Autobody logo" width={64} height={64} />
           <div>
-            <strong>{business.name.replace(/^CW\s+/i, '')}</strong>
+            <span className="footer-brand-name">{business.name.replace(/^CW\s+/i, '')}</span>
             <p>{business.tagline}</p>
           </div>
         </div>
         <div className="footer-actions">
           <address>
             <a href={`tel:${business.sms}`}>
-              <FaPhone aria-hidden="true" /> {business.phone}
+              <FaPhone aria-hidden="true" /> Call: {business.phone}
             </a>
             <a href={`mailto:${business.email}`}>
               <FaEnvelope aria-hidden="true" /> {business.email}
@@ -404,6 +405,7 @@ export default async function Home({ searchParams }: HomeProps) {
               <FaLocationDot aria-hidden="true" /> {business.city}, {business.state}
             </a>
           </address>
+          <ShareSiteButton />
           <a className="footer-owner-login" href="/cms">
             <FaLock aria-hidden="true" /> Owner login
           </a>
@@ -415,7 +417,7 @@ export default async function Home({ searchParams }: HomeProps) {
           <FaPhone aria-hidden="true" /> Call
         </a>
         <a href="#quote">
-          <FaCarBurst aria-hidden="true" /> Quote
+          <FaCarBurst aria-hidden="true" /> Photo quote
         </a>
       </nav>
     </main>
