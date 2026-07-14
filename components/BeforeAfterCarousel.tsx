@@ -10,9 +10,11 @@ type BeforeAfterCarouselProps = {
   projects: BeforeAfterProject[];
 };
 
+const INITIAL_REVEAL = 25;
+
 export default function BeforeAfterCarousel({ projects }: BeforeAfterCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [reveal, setReveal] = useState(50);
+  const [reveal, setReveal] = useState(INITIAL_REVEAL);
   const displayedProjects = projects;
   const activeProject = displayedProjects[activeIndex] || displayedProjects[0];
 
@@ -22,7 +24,7 @@ export default function BeforeAfterCarousel({ projects }: BeforeAfterCarouselPro
 
   const selectProject = (index: number) => {
     setActiveIndex(index);
-    setReveal(50);
+    setReveal(INITIAL_REVEAL);
   };
 
   const move = (direction: -1 | 1) => {

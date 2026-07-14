@@ -25,6 +25,7 @@ const defaultSeoContent: SeoContent = {
 export function generateSiteMetadata(content: SeoContent = defaultSeoContent): Metadata {
   const siteBusiness = content.business;
   const title = `${siteBusiness.name} | Mobile Dent, Bumper & Autobody Repair`;
+  const socialImage = '/cw-mobile-autobody-og.jpg';
 
   return {
     title: {
@@ -60,17 +61,17 @@ export function generateSiteMetadata(content: SeoContent = defaultSeoContent): M
       description: siteBusiness.description,
       siteName: siteBusiness.name,
       images: [{
-        url: content.images.hero,
+        url: socialImage,
         width: 1200,
         height: 630,
-        alt: `${siteBusiness.name} mobile auto body repair service vehicle`,
+        alt: `${siteBusiness.name} mobile dent, bumper, and paint repair in the East Valley`,
       }],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description: siteBusiness.description,
-      images: [content.images.hero],
+      images: [socialImage],
     },
     robots: {
       index: true,
