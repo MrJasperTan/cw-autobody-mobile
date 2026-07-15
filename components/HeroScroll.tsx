@@ -197,7 +197,7 @@ export default function HeroScroll({
                 Call now <FaPhone aria-hidden="true" />
               </a>
             </div>
-            <dl className="hero-proof">
+            <dl className="hero-proof hero-proof-desktop">
               {proof.map((item, index) => (
                 <div key={item} className={index === activeProofIndex ? 'is-active' : undefined}>
                   <dt>
@@ -209,6 +209,20 @@ export default function HeroScroll({
             </dl>
           </div>
         </div>
+        <dl className="hero-proof hero-proof-mobile" aria-live="polite">
+          {proof.map((item, index) => (
+            <div
+              key={item}
+              className={index === activeProofIndex ? 'is-active' : undefined}
+              aria-hidden={index !== activeProofIndex}
+            >
+              <dt>
+                <FaCheck aria-hidden="true" />
+              </dt>
+              <dd>{item}</dd>
+            </div>
+          ))}
+        </dl>
         <div className="hero-repair-meter" aria-hidden="true">
           <span>Exterior</span>
           <i />
