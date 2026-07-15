@@ -175,8 +175,8 @@ export default function HeroScroll({
           <p className="eyebrow">Mobile Dent, Bumper, Paint & Light Collision Repair</p>
           <h1 className="hero-title-lockup">
             <NextImage src="/cw-mark.svg" alt="CW Mobile Autobody logo" aria-hidden="true" width={104} height={104} priority />
-            <span className="sr-only">CW </span>
-            <span>{businessName.replace(/^CW\s+/i, '')} Repair</span>
+            <span className="hero-title-desktop">Mobile Autobody</span>
+            <span className="hero-title-mobile">{businessName.replace(/^CW\s+/i, '')} Repair</span>
           </h1>
           <p className="hero-copy">{tagline}</p>
           <div className="hero-actions">
