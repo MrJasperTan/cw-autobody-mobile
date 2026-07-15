@@ -5,7 +5,6 @@ import {
   FaChevronRight,
   FaClock,
   FaEnvelope,
-  FaFileInvoiceDollar,
   FaLocationDot,
   FaLock,
   FaPhone,
@@ -39,11 +38,9 @@ export default async function Home({ searchParams }: HomeProps) {
     beforeAfterProjects,
     faqs,
     images,
-    insuranceFeatures,
     navItems,
     processSteps,
     proof,
-    reviews,
     services,
   } = await getCmsContent();
 
@@ -78,7 +75,6 @@ export default async function Home({ searchParams }: HomeProps) {
         proof={proof}
         quoteUrl={business.quoteUrl}
         sms={business.sms}
-        tagline={business.tagline}
       />
 
       <section className="intro-section" aria-label="Service summary">
@@ -102,7 +98,7 @@ export default async function Home({ searchParams }: HomeProps) {
       <section id="services" className="services-section">
         <div className="section-heading">
           <p className="eyebrow dark">Services</p>
-          <h2>On-site body, paint, bumper, wheel, and restoration work built around mobile convenience.</h2>
+          <h2>On-site, built around your convenience &amp; budget.</h2>
         </div>
         <div className="service-grid">
           {services.map((service, index) => (
@@ -122,7 +118,7 @@ export default async function Home({ searchParams }: HomeProps) {
         <div className="feature-image" style={{ backgroundImage: `url(${images.repair})` }} />
         <div className="feature-content">
           <p className="eyebrow dark">On-site repair setup</p>
-          <h2>Clean work areas, controlled lighting, pro materials, and a finish you can inspect before we leave.</h2>
+          <h2>Clean work areas, pro materials, and a finish you can inspect before we leave.</h2>
           <ul>
             <li>
               <FaWandMagicSparkles aria-hidden="true" /> Paint-safe dent tooling and finish correction
@@ -140,7 +136,7 @@ export default async function Home({ searchParams }: HomeProps) {
       <section id="process" className="process-section">
         <div className="section-heading sticky-heading">
           <p className="eyebrow dark">Process</p>
-          <h2>From photo quote to finished panel in four clear steps.</h2>
+          <h2>4 easy steps</h2>
         </div>
         <div className="timeline">
           {processSteps.map((step, index) => (
@@ -151,44 +147,6 @@ export default async function Home({ searchParams }: HomeProps) {
                 <p>{step.text}</p>
               </div>
             </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="estimates" className="insurance-section" style={{ backgroundImage: `url(${images.detail})` }}>
-        <div>
-          <p className="eyebrow">Free estimates</p>
-          <h2>Call {business.phone} or send photos before scheduling mobile repair.</h2>
-          <p>
-            The service vehicle lists dent, frame, plastic bumper, scratch, and scrape repair. CW Mobile Autobody&apos;s current
-            public listing also offers paint work, color matching, headlight restoration and tinting, wheel curb-rash
-            repair, replacement parts, paint correction, and paint restoration.
-          </p>
-        </div>
-        <ul>
-          {insuranceFeatures.map((feature) => (
-            <li key={feature}>
-              <FaFileInvoiceDollar aria-hidden="true" />
-              {feature}
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section id="reviews" className="reviews-section">
-        <div className="section-heading">
-          <p className="eyebrow dark">Service terms</p>
-          <h2>Clear terms before work starts, with mobile payment options when the repair is complete.</h2>
-        </div>
-        <div className="review-grid">
-          {reviews.map((review) => (
-            <figure key={review.name}>
-              <blockquote>{review.quote}</blockquote>
-              <figcaption>
-                <strong>{review.name}</strong>
-                <span>{review.location}</span>
-              </figcaption>
-            </figure>
           ))}
         </div>
       </section>
@@ -239,7 +197,7 @@ export default async function Home({ searchParams }: HomeProps) {
           <div className="quote-media-shade" />
           <div className="quote-media-content">
             <FaCalendarCheck aria-hidden="true" />
-            <h2>Free estimate, photo upload, and scheduling in one place.</h2>
+            <h2>Photo upload, and scheduling in one place.</h2>
             <p>
               Upload damage photos, choose a preferred mobile appointment window, or call {business.phone} for the
               free estimate listed on the service vehicle.

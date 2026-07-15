@@ -145,11 +145,15 @@ export const sanitizeCmsContent = (input: unknown): CmsContent => {
     proof: (Array.isArray(record.proof) ? record.proof : proof)
       .slice(0, 8)
       .map((item, index) => text(item, proof[index] || 'Proof point', 120)),
-    services: arrayOfRecords(record.services, services, (item, fallback) => ({
-      name: text(item.name, fallback.name, 120),
-      description: text(item.description, fallback.description, 360),
-      price: text(item.price, fallback.price, 80),
-    }), 12),
+    services: arrayOfRecords(record.services, services, (item, fallback) => {
+      const savedPrice = text(item.price, fallback.price, 80);
+
+      return {
+        name: text(item.name, fallback.name, 120),
+        description: text(item.description, fallback.description, 360),
+        price: /^free estimates?$/i.test(savedPrice) ? fallback.price : savedPrice,
+      };
+    }, 12),
     processSteps: arrayOfRecords(record.processSteps, processSteps, (item, fallback) => ({
       title: text(item.title, fallback.title, 120),
       text: text(item.text, fallback.text, 360),

@@ -12,7 +12,6 @@ type HeroScrollProps = {
   poster: string;
   phone: string;
   sms: string;
-  tagline: string;
   quoteUrl: string;
   proof: string[];
 };
@@ -25,13 +24,15 @@ export default function HeroScroll({
   proof,
   quoteUrl,
   sms,
-  tagline,
 }: HeroScrollProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const framesRef = useRef<Array<HTMLImageElement | undefined>>(Array(FRAME_COUNT));
   const rafRef = useRef<number | null>(null);
+  const activeProofRef = useRef(0);
   const [ready, setReady] = useState(false);
+  const [activeProofIndex, setActiveProofIndex] = useState(0);
+  const proofCount = proof.length;
 
   useEffect(() => {
     let cancelled = false;
@@ -112,6 +113,13 @@ export default function HeroScroll({
       const frameIndex = Math.min(FRAME_COUNT - 1, Math.round(progress * (FRAME_COUNT - 1)));
       drawFrame(frameIndex);
       section.style.setProperty('--hero-progress', String(progress));
+      if (window.innerWidth <= 680 && proofCount > 0) {
+        const nextProofIndex = Math.min(proofCount - 1, Math.floor(progress * proofCount));
+        if (nextProofIndex !== activeProofRef.current) {
+          activeProofRef.current = nextProofIndex;
+          setActiveProofIndex(nextProofIndex);
+        }
+      }
       rafRef.current = null;
     };
 
@@ -160,7 +168,7 @@ export default function HeroScroll({
       resizeObserver.disconnect();
       if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
     };
-  }, [frameBase]);
+  }, [frameBase, proofCount]);
 
   return (
     <section
@@ -177,9 +185,8 @@ export default function HeroScroll({
             <h1 className="hero-title-lockup">
               <NextImage src="/cw-mark.svg" alt="CW Mobile Autobody logo" aria-hidden="true" width={104} height={104} priority />
               <span className="hero-title-desktop">Mobile Autobody</span>
-              <span className="hero-title-mobile">{businessName.replace(/^CW\s+/i, '')} Repair</span>
+              <span className="hero-title-mobile">Mobile Autobody</span>
             </h1>
-            <p className="hero-copy">{tagline}</p>
           </div>
           <div className="hero-lower">
             <div className="hero-actions">
@@ -191,8 +198,8 @@ export default function HeroScroll({
               </a>
             </div>
             <dl className="hero-proof">
-              {proof.map((item) => (
-                <div key={item}>
+              {proof.map((item, index) => (
+                <div key={item} className={index === activeProofIndex ? 'is-active' : undefined}>
                   <dt>
                     <FaCheck aria-hidden="true" />
                   </dt>

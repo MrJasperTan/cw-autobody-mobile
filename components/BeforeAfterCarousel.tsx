@@ -33,16 +33,14 @@ export default function BeforeAfterCarousel({ projects }: BeforeAfterCarouselPro
 
   return (
     <section id="results" className="results-section" aria-labelledby="results-heading">
-      <header className="results-heading">
+      <header className={`results-heading ${activeProject.isReference ? 'results-heading-single' : ''}`}>
         <div>
           <p className="eyebrow">Before and after</p>
           <h2 id="results-heading">Move the handle. Inspect the repair.</h2>
         </div>
-        <p>
-          {activeProject.isReference
-            ? 'Temporary restoration example. Add verified CW repairs and customer feedback through the owner CMS.'
-            : 'CW Mobile Autobody work, photographed before service and after the finished repair.'}
-        </p>
+        {!activeProject.isReference ? (
+          <p>CW Mobile Autobody work, photographed before service and after the finished repair.</p>
+        ) : null}
       </header>
 
       <div className="comparison-stage">
@@ -82,6 +80,18 @@ export default function BeforeAfterCarousel({ projects }: BeforeAfterCarouselPro
           </figcaption>
         </figure>
 
+        {displayedProjects.length > 1 ? (
+          <div className="carousel-controls carousel-controls-mobile">
+            <span>{String(activeIndex + 1).padStart(2, '0')} / {String(displayedProjects.length).padStart(2, '0')}</span>
+            <button type="button" onClick={() => move(-1)} aria-label="Show previous repair">
+              <FaArrowLeft aria-hidden="true" />
+            </button>
+            <button type="button" onClick={() => move(1)} aria-label="Show next repair">
+              <FaArrowRight aria-hidden="true" />
+            </button>
+          </div>
+        ) : null}
+
         <div className="comparison-details" aria-live="polite">
           <div>
             <span>{activeProject.service || 'Completed mobile repair'}</span>
@@ -106,7 +116,7 @@ export default function BeforeAfterCarousel({ projects }: BeforeAfterCarouselPro
           </div>
 
           {displayedProjects.length > 1 ? (
-            <div className="carousel-controls">
+            <div className="carousel-controls carousel-controls-desktop">
               <span>{String(activeIndex + 1).padStart(2, '0')} / {String(displayedProjects.length).padStart(2, '0')}</span>
               <button type="button" onClick={() => move(-1)} aria-label="Show previous repair">
                 <FaArrowLeft aria-hidden="true" />

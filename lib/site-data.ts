@@ -34,8 +34,6 @@ export const navItems = [
   { label: 'Services', href: '#services' },
   { label: 'Results', href: '#results' },
   { label: 'Process', href: '#process' },
-  { label: 'Estimates', href: '#estimates' },
-  { label: 'Service terms', href: '#reviews' },
   { label: 'Quote', href: '#quote' },
 ];
 
@@ -154,37 +152,37 @@ export const services = [
   {
     name: 'Dent repair',
     description: 'Mobile dent repair for door dings, parking lot damage, shallow dents, and everyday body damage.',
-    price: 'Free estimate',
+    price: 'Starting at $99',
   },
   {
     name: 'Frame repair',
     description: 'Frame repair evaluation and repair guidance for visible alignment or impact-related damage.',
-    price: 'Free estimate',
+    price: 'Starting at $149',
   },
   {
     name: 'Plastic bumper repair',
     description: 'Mobile repair for plastic bumper scrapes, gouges, scuffs, cracks, and minor impact damage.',
-    price: 'Free estimate',
+    price: 'Starting at $149',
   },
   {
     name: 'Scratch, scrape, and paint repair',
     description: 'On-site scratch and scrape repair, touch-up painting, color matching, paint correction, and paint restoration.',
-    price: 'Free estimate',
+    price: 'Starting at $129',
   },
   {
     name: 'Headlight restoration and tinting',
     description: 'Headlight surface restoration and custom headlight tinting offered as part of the mobile service catalog.',
-    price: 'Free estimate',
+    price: 'Starting at $79',
   },
   {
     name: 'Wheel curb-rash repair and painting',
     description: 'Cosmetic wheel repair for curb rash, scuffs, finish damage, and wheel repainting.',
-    price: 'Free estimate',
+    price: 'Starting at $99',
   },
   {
     name: 'Part replacement and custom repairs',
     description: 'New-part replacement and custom cosmetic repair work evaluated from photos before scheduling.',
-    price: 'Free estimate',
+    price: 'Starting at $149',
   },
 ];
 

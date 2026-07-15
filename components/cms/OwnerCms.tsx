@@ -223,19 +223,6 @@ export default function OwnerCms() {
     setSaveState('idle');
   };
 
-  const updateReview = (
-    index: number,
-    field: keyof CmsContent['reviews'][number],
-    value: string,
-  ) => {
-    setContent((current) => current ? {
-      ...current,
-      reviews: current.reviews.map((review, reviewIndex) =>
-        reviewIndex === index ? { ...review, [field]: value } : review),
-    } : current);
-    setSaveState('idle');
-  };
-
   const updateFaq = (
     index: number,
     field: keyof CmsContent['faqs'][number],
@@ -757,60 +744,11 @@ export default function OwnerCms() {
                 className="btn btn-secondary dark-button add-content-item"
                 type="button"
                 onClick={() => {
-                  setContent((current) => current ? { ...current, services: [...current.services, { name: '', description: '', price: 'Free estimate' }] } : current);
+                  setContent((current) => current ? { ...current, services: [...current.services, { name: '', description: '', price: 'Starting at $99' }] } : current);
                   setSaveState('idle');
                 }}
               >
                 <FaPlus aria-hidden="true" /> Add service
-              </button>
-            </details>
-
-            <details className="content-section">
-              <summary>Service terms and policies</summary>
-              <div className="content-list">
-                {content.reviews.map((review, index) => (
-                  <div className="content-list-item" key={`${review.name}-${index}`}>
-                    <div className="content-list-heading">
-                      <strong>Policy {index + 1}</strong>
-                      <button
-                        type="button"
-                        className="icon-button danger-button"
-                        onClick={() => {
-                          setContent((current) => current ? { ...current, reviews: current.reviews.filter((_, itemIndex) => itemIndex !== index) } : current);
-                          setSaveState('idle');
-                        }}
-                        aria-label={`Remove ${review.name || `policy ${index + 1}`}`}
-                        title="Remove policy"
-                      >
-                        <FaTrash aria-hidden="true" />
-                      </button>
-                    </div>
-                    <div className="content-form-grid">
-                      <label>
-                        Policy title
-                        <input value={review.name} onChange={(event) => updateReview(index, 'name', event.target.value)} />
-                      </label>
-                      <label>
-                        Short label
-                        <input value={review.location} onChange={(event) => updateReview(index, 'location', event.target.value)} />
-                      </label>
-                      <label className="full-field">
-                        Policy details
-                        <textarea rows={3} value={review.quote} onChange={(event) => updateReview(index, 'quote', event.target.value)} />
-                      </label>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <button
-                className="btn btn-secondary dark-button add-content-item"
-                type="button"
-                onClick={() => {
-                  setContent((current) => current ? { ...current, reviews: [...current.reviews, { name: '', location: '', quote: '' }] } : current);
-                  setSaveState('idle');
-                }}
-              >
-                <FaPlus aria-hidden="true" /> Add policy
               </button>
             </details>
 
