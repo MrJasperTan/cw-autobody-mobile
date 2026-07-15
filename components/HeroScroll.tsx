@@ -172,31 +172,35 @@ export default function HeroScroll({
       <div className="hero-sticky">
         <canvas ref={canvasRef} className="hero-canvas" aria-hidden="true" />
         <div className="hero-content">
-          <p className="eyebrow">Mobile Dent, Bumper, Paint & Light Collision Repair</p>
-          <h1 className="hero-title-lockup">
-            <NextImage src="/cw-mark.svg" alt="CW Mobile Autobody logo" aria-hidden="true" width={104} height={104} priority />
-            <span className="hero-title-desktop">Mobile Autobody</span>
-            <span className="hero-title-mobile">{businessName.replace(/^CW\s+/i, '')} Repair</span>
-          </h1>
-          <p className="hero-copy">{tagline}</p>
-          <div className="hero-actions">
-            <a className="btn btn-primary" href={quoteUrl}>
-              Get a free estimate <FaArrowRight aria-hidden="true" />
-            </a>
-            <a className="btn btn-secondary" href={`tel:${sms}`}>
-              Call now <FaPhone aria-hidden="true" />
-            </a>
+          <div className="hero-heading">
+            <p className="eyebrow">Mobile Dent, Bumper, Paint & Light Collision Repair</p>
+            <h1 className="hero-title-lockup">
+              <NextImage src="/cw-mark.svg" alt="CW Mobile Autobody logo" aria-hidden="true" width={104} height={104} priority />
+              <span className="hero-title-desktop">Mobile Autobody</span>
+              <span className="hero-title-mobile">{businessName.replace(/^CW\s+/i, '')} Repair</span>
+            </h1>
+            <p className="hero-copy">{tagline}</p>
           </div>
-          <dl className="hero-proof">
-            {proof.map((item) => (
-              <div key={item}>
-                <dt>
-                  <FaCheck aria-hidden="true" />
-                </dt>
-                <dd>{item}</dd>
-              </div>
-            ))}
-          </dl>
+          <div className="hero-lower">
+            <div className="hero-actions">
+              <a className="btn btn-primary" href={quoteUrl}>
+                Get a free estimate <FaArrowRight aria-hidden="true" />
+              </a>
+              <a className="btn btn-secondary" href={`tel:${sms}`}>
+                Call now <FaPhone aria-hidden="true" />
+              </a>
+            </div>
+            <dl className="hero-proof">
+              {proof.map((item) => (
+                <div key={item}>
+                  <dt>
+                    <FaCheck aria-hidden="true" />
+                  </dt>
+                  <dd>{item}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
         </div>
         <div className="hero-repair-meter" aria-hidden="true">
           <span>Exterior</span>

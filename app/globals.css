@@ -353,7 +353,39 @@ h3 {
 
 @media (min-width: 681px) {
   .hero-content {
-    width: min(1180px, calc(100vw - 176px));
+    position: absolute;
+    inset: 128px clamp(72px, 6vw, 88px) 64px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+  }
+
+  .hero-heading {
+    max-width: min(760px, 58vw);
+    align-self: flex-end;
+    text-align: right;
+  }
+
+  .hero-heading .eyebrow {
+    margin-bottom: 10px;
+  }
+
+  .hero-title-lockup {
+    justify-content: flex-end;
+    margin-left: auto;
+    font-size: clamp(3.4rem, 5vw, 5.25rem);
+  }
+
+  .hero-title-desktop {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .hero-lower {
+    align-self: flex-start;
+    margin-top: auto;
+    pointer-events: auto;
   }
 
   .hero-proof {
