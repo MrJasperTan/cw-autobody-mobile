@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { generateSiteMetadata, generateStructuredData } from '@/lib/metadata';
 import { getCmsContent } from '@/lib/cms-content';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 export async function generateMetadata(): Promise<Metadata> {
   return generateSiteMetadata(await getCmsContent());
@@ -25,7 +26,10 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(generateStructuredData(content)) }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <GoogleAnalytics />
+      </body>
     </html>
   );
 }
