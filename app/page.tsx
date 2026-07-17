@@ -13,6 +13,7 @@ import {
   FaWandMagicSparkles,
 } from 'react-icons/fa6';
 import Image from 'next/image';
+import Link from 'next/link';
 import {
   appointmentWindows,
   estimateTypes,
@@ -60,6 +61,7 @@ export default async function Home({ searchParams }: HomeProps) {
               {item.label}
             </a>
           ))}
+          <Link href="/blog">Blog</Link>
         </nav>
         <a className="header-call" href={`tel:${business.sms}`} aria-label={`Call ${business.name}`}>
           <FaPhone aria-hidden="true" />

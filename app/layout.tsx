@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import './blog.css';
 import { generateSiteMetadata, generateStructuredData } from '@/lib/metadata';
 import { getCmsContent } from '@/lib/cms-content';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
